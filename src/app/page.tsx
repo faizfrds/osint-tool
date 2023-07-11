@@ -2,13 +2,14 @@
 import Image from "next/image";
 import { useState } from "react";
 import { data } from "autoprefixer";
+import { Button } from "react-bootstrap";
 
 export default function Home() {
   const [ip, setIP] = useState("");
   const [search, setSearch] = useState("");
 
   const handleSubmit = () => {
-    
+
     fetch("https://ipinfo.io/" + ip + "/json?token=74d362736f86b7")
       .then((response) => response.json())
       .then((data) => setSearch(data));
@@ -27,14 +28,14 @@ export default function Home() {
           onChange={(t) => setIP(t.target.value)}
         />
 
-        <Button
+        <button
           className="bg-blue-500 hover:bg-blue-700 ml-3 py-4 px-3 text-white font-bold rounded-md"
-          onClick={() => {
-            handleSubmit();
+          onClick={(e) => {
+            handleSubmit(e);
           }}
         >
           Search
-        </Button>
+        </button>
       </div>
 
       <div className="grid grid-cols-4 gap-10 text-center bg-slate-700 py-6 px-4 mt-10">
