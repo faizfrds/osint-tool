@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 async function getTime(): Promise<Time>{ //function to return time
 
-  const res = await fetch("http://worldtimeapi.org/api/timezone/Asia/Jakarta", 
+  const res = await fetch("https://api.api-ninjas.com/v1/worldtime?city=London", 
   {
     next: { //refreshes every 4 seconds
       revalidate: 2,
@@ -22,7 +22,7 @@ async function getTime(): Promise<Time>{ //function to return time
 }
 
 type Time = {
-  datetime: string;
+  date: string;
 }
 
 export default async function RootLayout({
@@ -36,7 +36,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <h2>{res.datetime}</h2>
+        <h2>{res.date}</h2>
         {children}
       </body>
     </html>
