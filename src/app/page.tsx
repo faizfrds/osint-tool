@@ -36,10 +36,7 @@ export default function Home() {
       </div>
 
       <div className="grid grid-cols-4 gap-10 text-center bg-slate-700 py-6 px-4 mt-10">
-        <div>{search.city}</div>
-        <div>{search.region}</div>
-        <div>{search.country}</div>
-        <div>{search.postal}</div>
+
       </div>
     </main>
   );
