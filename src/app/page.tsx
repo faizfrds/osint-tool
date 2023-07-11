@@ -2,7 +2,6 @@
 import Image from "next/image";
 import { useState } from "react";
 import { data } from "autoprefixer";
-import { Button } from "react-bootstrap";
 
 export default function Home() {
   const [ip, setIP] = useState("");
