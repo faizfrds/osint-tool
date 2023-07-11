@@ -2,7 +2,6 @@
 import Image from "next/image";
 import { useState } from "react";
 import { data } from "autoprefixer";
-import { Button } from "react-bootstrap";
 
 export default function Home() {
   const [ip, setIP] = useState("");
@@ -30,9 +29,7 @@ export default function Home() {
 
         <button
           className="bg-blue-500 hover:bg-blue-700 ml-3 py-4 px-3 text-white font-bold rounded-md"
-          onClick={(e) => {
-            handleSubmit(e);
-          }}
+          onClick={handleSubmit}
         >
           Search
         </button>
