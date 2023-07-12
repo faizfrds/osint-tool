@@ -5,13 +5,25 @@ import { data } from "autoprefixer";
 
 export default function Home() {
   const [ip, setIP] = useState("");
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState(({ // creating a search const in order to store ip address data
+    ipAdd: "",
+    city: "",
+    region: "",
+    country: "",
+    postal: "",
+  }));
 
   const handleSubmit = () => {
 
-    fetch("https://ipinfo.io/" + ip + "/json?token=74d362736f86b7")
+    fetch("https://ipinfo.io/" + ip + "/json?token=74d362736f86b7") // uses user input in fetching api request
       .then((response) => response.json())
-      .then((data) => setSearch(data));
+      .then((data) => setSearch({
+        ipAdd: data.ip,
+        city: data.city,
+        region: data.region,
+        country: data.country,
+        postal: data.postal,
+      }));
   };
 
   return (
