@@ -2,15 +2,6 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { data } from "autoprefixer";
-import Backend from "./backend/page";
-
-import {
-  QueryClient,
-  QueryClientProvider,
-  useQuery,
-} from "@tanstack/react-query";
-
-const queryClient = new QueryClient();
 
 export default function Home() {
   const [ip, setIP] = useState("");
